@@ -16,6 +16,8 @@ class AlumnosController extends Controller
     {
         //sin cache
         //$alumnos = Alumnos::all();
+
+        //Con cache
         if(Cache::has('alumnos')){
         $alumnos = Cache::get('alumnos');
         }else{

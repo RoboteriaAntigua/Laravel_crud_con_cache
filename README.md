@@ -3,7 +3,10 @@
     Para ello acelera el proceso con cache.
 
 # El cache se actualiza siempre que se realice las tareas de store, update y delete.
-
+    //Actualizar el cache
+        $alumnos=Alumnos::all();
+        Cache::forget('alumnos');
+        Cache::put('alumnos',$alumnos);
 
  # Objetivo: 
     Llenar con 1 millon de registros y medir el performance con y sin cache.
@@ -24,3 +27,6 @@
         }  
     }
 }
+
+# Problemas:
+    Tarda mucho en semillar, probado con 10 mil registros unicamente.
