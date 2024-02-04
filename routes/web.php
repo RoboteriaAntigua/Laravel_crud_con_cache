@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(AlumnosController::class)->group(function(){
+    Route::get( '/', 'index')                         ->name('alumnos.index');
+    Route::get( 'alumnos/create','create')          ->name('alumnos.create');
+    Route::get( 'alumnos/{alumno}','show')              ->name('alumnos.show');
+    Route::post('alumnos/create/store','store')    ->name('alumnos.store');
+    Route::get( 'alumnos/edit/{id}','edit')         ->name('alumnos.edit');
+    Route::put( 'alumnos/{id}','update')            ->name('alumnos.update');
+    Route::put( 'alumnos/delete/{id}','destroy')    ->name('alumnos.destroy');
 });
