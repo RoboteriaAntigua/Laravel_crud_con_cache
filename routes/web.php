@@ -15,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(AlumnosController::class)->group(function(){
-    Route::get( '/', 'index')                         ->name('alumnos.index');
-    Route::get( 'alumnos/create','create')          ->name('alumnos.create');
-    Route::get( 'alumnos/{alumno}','show')              ->name('alumnos.show');
-    Route::post('alumnos/create/store','store')    ->name('alumnos.store');
-    Route::get( 'alumnos/edit/{id}','edit')         ->name('alumnos.edit');
-    Route::put( 'alumnos/{id}','update')            ->name('alumnos.update');
-    Route::put( 'alumnos/delete/{id}','destroy')    ->name('alumnos.destroy');
+    Route::get( '/', 'index')                                   ->name('alumnos.index');
+    Route::get( 'alumnos/listar','listar')                      ->name('alumnos.listar');
+    Route::get( 'alumnos/listarCache','listarCache')            ->name('alumnos.listarCache');
+    Route::get( 'alumnos/listarRenderCache','listarRenderCache')  ->name('alumnos.listarRenderCache');
+    Route::get( 'alumnos/actualizarCache','actualizarCache')    ->name('alumnos.actualizarCache');                
+    Route::get( 'alumnos/create','create')                      ->name('alumnos.create');
+    Route::get( 'alumnos/{alumno}','show')                      ->name('alumnos.show');
+    Route::post('alumnos/create/store','store')                 ->name('alumnos.store');
+    Route::get( 'alumnos/edit/{id}','edit')                     ->name('alumnos.edit');
+    Route::put( 'alumnos/{id}','update')                        ->name('alumnos.update');
+    Route::put( 'alumnos/delete/{id}','destroy')                ->name('alumnos.destroy');
 });
